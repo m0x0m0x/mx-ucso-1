@@ -20,28 +20,35 @@ use alloy_signer_wallet::wallet::LocalWallet;
 pub fn w1_main() {
     let title = "~ Get v r s from private key ~";
     println!("{}", title.yellow().on_blue());
+    w1_vrs()
 }
 
 
 // --- Sub Functions ---
 
 fn w1_vrs() {
-    
-    let private_key_hex = "0xe3185425e6ff3e7ab38157c726623225942eb666f3b5fcc321c21f574084ec85";
-    let private_key = B256::from_hex(private_key_hex).unwrap();
-
-    // Create wallet from private key
-    let wallet = LocalWallet::from_bytes(private_key).unwrap();
-
-    // Hash message
-    let message = b"hello world";
-    let message_hash = keccak256(message);
-
-    // Sign the hash
-    let sig = wallet.sign_hash_sync(message_hash).unwrap();
-
-    println!("r: 0x{:x}", sig.r);
-    println!("s: 0x{:x}", sig.s);
-    println!("v: {}", sig.v);
+     // Initialize the signer with your private key
+     let private_key = "0xe3185425e6ff3e7ab38157c726623225942eb666f3b5fcc321c21f574084ec85"; // Replace with your actual private key
+     let signer = PrivateKeySigner::from_bytes(&hex::decode(private_key)?).expect("Invalid private key");
+ 
+     // The message to sign
+     let message = b"hello";
+ 
+     // Sign the message
+     let signature: Signature = signer.sign_message_sync(message)?;
+ 
+     // Extract r and s values
+     let r = signature.r();
+     let s = signature.s();
+ 
+     // Determine the recovery id (v value)
+     let v = signature.recovery_id().map(|id| id.to_byte()).unwrap_or(0);
+ 
+     println!("r: {:?}", r);
+     println!("s: {:?}", s);
+     println!("v: {:?}", v);
+ 
+     Ok(())
+ }
 
 }

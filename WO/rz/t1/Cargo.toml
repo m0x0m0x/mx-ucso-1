@@ -6,7 +6,7 @@ edition = "2024"
 [dependencies]
 cfonts = "1.2.0"
 yansi = "1.0.1"
-alloy-signer = "0.1" # Replace with the latest version
+alloy-signer = "0.13.0" # Replace with the latest version
 alloy-signer-local = "0.13.0" # Replace with the latest version
 tokio = { version = "1", features = ["full"] }
 eyre = "0.6"

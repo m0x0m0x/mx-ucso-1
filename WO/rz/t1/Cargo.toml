@@ -4,9 +4,8 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-cfonts = "1.2.0"
-yansi = "1.0.1"
-alloy-primitives = "1.0.0"
-alloy-signer = "0.13.0"
-alloy-signer-local = "0.13.0"
-eyre = "0.6"
+yansi = "1.0.0"
+ethers = { version = "2.0", features = ["legacy"] } # Use 2.0 or latest, "legacy" feature helps with sign_hash
+hex = "0.4"
+tokio = { version = "1", features = ["full"] } # For async main
+thiserror = "2.0.12" # For basic error handling

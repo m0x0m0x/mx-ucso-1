@@ -13,7 +13,7 @@ use yansi::Paint;
 
 use alloy_primitives::{keccak256, B256};
 use alloy_primitives::hex::FromHex;
-use alloy_signer_wallet::LocalWallet as LocalSigner;
+use alloy_signer_wallet::LocalSigner;
 use alloy_signer::Signer;
 
 // -- Main Function cAll 

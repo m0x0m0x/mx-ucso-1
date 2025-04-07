@@ -1,0 +1,14 @@
+Generating mnemonic from provided entropy...
+Successfully generated a new mnemonic.
+Phrase:
+garbage castle bargain cruise funny gasp trick gospel fiscal orange carbon climb
+
+Accounts:
+- Account 0:
+Address:     0x4390173Fd4326EBA16eA694Df66A7641F8F460ad
+Private key: 0xd791c1b1402de90e133cc71289868bd87bbf13fc5e30ed23c7e11a32097d39ec
+
+- Account 1:
+Address:     0x08Be2E778c1a7079C405Dc842d1bDeDbD74E5CC8
+Private key: 0xdf7ce19c14b81cfea871e50b15facf9600a493205c8d1f1f051b4e18a4a0338a
+

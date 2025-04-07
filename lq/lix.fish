@@ -11,9 +11,9 @@ rustup update
 cargo --version
 
 # Fish Install
-sudo apt-add-repository ppa:fish-shell/release-3 -y
-sudo apt install libwebkit2gtk-4.0-dev libgtk-3-dev libappindicator3-dev -y
-sudo apt-get install fish -y
+sudo apt-add-repository ppa:fish-shell/release-4 -y
+sudo apt update -y
+sudo apt install fish -y
 sudo apt install shellcheck
 
 # Brwe Install

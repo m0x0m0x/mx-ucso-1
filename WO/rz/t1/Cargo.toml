@@ -9,4 +9,4 @@ ethers = { version = "2.0", features = ["legacy"] } # Use 2.0 or latest, "legacy
 hex = "0.4"
 tokio = { version = "1", features = ["full"] } # For async main
 thiserror = "2.0.12" # For basic error handling
-cfonts = { version = "1.2.0", features = ["color"] } # For colored text
+cfonts = "1.2.0"

@@ -26,24 +26,27 @@ pub fn w1_main() {
 // --- Sub Functions ---
 
 fn w1_vrs() {
-    // Private key (32 bytes)
-    let wallet: LocalWallet = "4c0883a69102937d6231471b5dbb6204fe5129617082797a6f110b6436e4b8e7"
-        .parse()
-        .unwrap();
+    // Your raw private key
+    let private_key_hex = "4c0883a69102937d6231471b5dbb6204fe5129617082797a6f110b6436e4b8e7";
+    let private_key = B256::from_hex(private_key_hex).unwrap();
 
-    // Hash the message (keccak256 of raw bytes)
+    // Create a signer directly from the private key
+    let signer = LocalSigner::from_bytes(private_key).unwrap();
+
+    // Hash your message (keccak256)
     let message = b"hello world";
-    let message_hash: B256 = keccak256(message);
+    let message_hash = keccak256(message);
 
-    // Sign the message hash
-    let sig = wallet.sign_hash(message_hash).unwrap();
+    // Sign the hash
+    let signature = signer.sign_hash_sync(message_hash).unwrap();
 
     // Extract v, r, s
-    let v = sig.v;
-    let r = sig.r;
-    let s = sig.s;
+    let v = signature.v;
+    let r = signature.r;
+    let s = signature.s;
 
     println!("r: 0x{:x}", r);
     println!("s: 0x{:x}", s);
     println!("v: {}", v); // 27 or 28
+
 }

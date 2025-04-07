@@ -1,43 +1,39 @@
-# Default goal
-.DEFAULT_GOAL := help
+SHELL := /bin/bash
+.PHONY: run build test doctest clean clippy help
 
-# Color definitions (ANSI escape codes)
+# ANSI color codes
+RED := \033[1;31m
+GREEN := \033[1;32m
 YELLOW := \033[1;33m
-CYAN   := \033[1;36m
-RESET  := \033[0m
+BLUE := \033[1;34m
+CYAN := \033[1;36m
+RESET := \033[0m
 
-## build            🛠️  Build the Rust project
-build:
-	cargo build
+# Default target
+help: ## Show available commands
+	@echo -e "$(CYAN)Available Commands:$(RESET)"
+	@grep -E '^[a-zA-Z_-]+:' $(MAKEFILE_LIST) | sed 's/:.*##/:/g' | awk -F ': ' '{printf "  $(GREEN)%-12s$(RESET) %s\n", $$1, $$2}'
 
-## run              🚀 Run the Rust binary
-run:
-	cargo run
+run: ## Run the project
+	@echo -e "$(GREEN)Running project...$(RESET)"
+	@cargo run
 
-## release          📦 Build release binary
-release:
-	cargo build --release
+build: ## Build the project
+	@echo -e "$(YELLOW)Building project...$(RESET)"
+	@cargo build --release
 
-## test             🧪 Run tests
-test:
-	cargo test
+test: ## Run unit and integration tests
+	@echo -e "$(BLUE)Running tests...$(RESET)"
+	@cargo nextest run
 
-## fmt              🎨 Format code using rustfmt
-fmt:
-	cargo fmt
+doctest: ## Run documentation tests
+	@echo -e "$(BLUE)Running documentation tests...$(RESET)"
+	@cargo test --doc
 
-## clippy           🔍 Run clippy linter
-clippy:
-	cargo clippy --all-targets --all-features -- -D warnings
+clippy: ## Run Clippy (linter) and automatically fix issues
+	@echo -e "$(YELLOW)Running Clippy...$(RESET)"
+	@cargo clippy --fix --allow-dirty --allow-staged
 
-## clean            🧹 Clean the target directory
-clean:
-	cargo clean
-
-## help             📖 Show this help message
-help:
-	@printf "$(CYAN)Available commands:$(RESET)\n\n"
-	@awk 'BEGIN {FS = ":.*##"; OFS = ""} \
-		/^[a-zA-Z0-9_-]+:.*##/ { \
-			printf "  $(YELLOW)%-15s$(RESET) %s\n", $$1, $$2 \
-		}' $(MAKEFILE_LIST)
+clean: ## Remove build artifacts
+	@echo -e "$(RED)Cleaning up...$(RESET)"
+	@cargo clean

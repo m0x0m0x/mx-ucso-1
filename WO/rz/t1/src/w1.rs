@@ -8,12 +8,13 @@ This rust file is to calculate the v r s from the private key provided
 #![allow(unused_variables)]
 
 // --- Imports ---
-use crate::ut::
+use crate::ut::print_with_synthwave_gradient;
 
 // -- Main Function cAll 
 
 pub fn w1_main() {
-
+    let title = "w1";
+    print_with_synthwave_gradient(title.to_string());
 }
 
 

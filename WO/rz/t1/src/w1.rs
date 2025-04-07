@@ -11,6 +11,7 @@ This rust file is to calculate the v r s from the private key provided
 use crate::ut::print_with_synthwave_gradient;
 use yansi::Paint;
 
+
 // -- Main Function cAll 
 
 pub fn w1_main() {

@@ -4,6 +4,8 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+alloy-primitives = "1.0.0"
+alloy-signer-wallet = "0.0.0-reserved"
 cfonts = "1.2.0"
 hex-literal = "1.0.0"
 k256 = "0.13.4"

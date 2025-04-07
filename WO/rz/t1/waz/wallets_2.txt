@@ -1,0 +1,14 @@
+Generating mnemonic from provided entropy...
+Successfully generated a new mnemonic.
+Phrase:
+lens situate become clutch sad during discover opera mix father iron rocket
+
+Accounts:
+- Account 0:
+Address:     0xdf2c141DB58005313cA1F214d70882224Cf1bAEF
+Private key: 0xe3185425e6ff3e7ab38157c726623225942eb666f3b5fcc321c21f574084ec85
+
+- Account 1:
+Address:     0x6d0F6538fF41263310DdF59f41e74ee753438E7b
+Private key: 0x6466b12ccfbf5a8537950026109dd2535a0f8bb5ef94eb81bcf4f6e8405aed02
+

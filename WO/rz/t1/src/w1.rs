@@ -13,7 +13,7 @@ use crate::ut::print_with_synthwave_gradient;
 // -- Main Function cAll 
 
 pub fn w1_main() {
-    let title = "w1";
+    let title = "Get v r s from private key";
     print_with_synthwave_gradient(title.to_string());
 }
 

@@ -32,14 +32,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "d2"
-version = "0.1.0"
-dependencies = [
- "cfonts",
- "yansi",
-]
-
-[[package]]
 name = "enable-ansi-support"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -262,6 +254,14 @@ dependencies = [
  "proc-macro2",
  "quote",
  "unicode-ident",
+]
+
+[[package]]
+name = "t1"
+version = "0.1.0"
+dependencies = [
+ "cfonts",
+ "yansi",
 ]
 
 [[package]]

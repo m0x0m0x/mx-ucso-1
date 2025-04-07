@@ -22,11 +22,7 @@ source $HOME/.config/fish/config.fish
 echo -e ""
 echo -e "Installing Aderyn"
 brew install cyfrin/tap/aderyn
-echo -e "Installing Soldeer"
-echo -e "cargo install soldeer"
 echo -e ""
-cargo install soldeer
-echo -e "" 
 echo -e " Now restart the shell and run the following"
 echo -e (set_color F9E400)""
 echo -e "foundryup "

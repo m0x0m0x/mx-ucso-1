@@ -11,7 +11,7 @@ This rust file is to calculate the v r s from the private key provided
 use crate::ut::print_with_synthwave_gradient;
 use yansi::Paint;
 
-use alloy_signer_wallet::LocalWallet;
+use alloy_signer_wallet::wallet::LocalWallet;
 use alloy_primitives::{keccak256, Address, B256};
 
 // -- Main Function cAll 

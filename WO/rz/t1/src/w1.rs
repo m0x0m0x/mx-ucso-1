@@ -51,8 +51,8 @@ async fn w1_vrs() -> Result<(), SimpleSignError> {
     .into(); // Convert H256 string to [u8; 32]
     let message_hash = H256::from(message_hash_bytes); // Create H256 from bytes
 
-    println!("Private Key (prefix): {}...", &private_key_hex[0..10]);
-    println!("Message Hash to Sign: {:?}", message_hash);
+    println!("Private Key (prefix): {}...", &private_key_hex[0..10].blue());
+    println!("Message Hash to Sign: {:?}", message_hash.blue());
 
     // 1. Create Wallet from Private Key
     // Use `from_str` which handles hex decoding (including "0x" prefix)

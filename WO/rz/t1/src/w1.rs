@@ -9,13 +9,15 @@ This rust file is to calculate the v r s from the private key provided
 
 // --- Imports ---
 use crate::ut::print_with_synthwave_gradient;
+use yansi::Paint;
 
 // -- Main Function cAll 
 
 pub fn w1_main() {
-    let title = "Get v r s from private key";
-    print_with_synthwave_gradient(title.to_string());
+    let title = "~ Get v r s from private key ~";
+    println!("{}", title.yellow().on_blue());
 }
 
 
 // --- Sub Functions ---
+

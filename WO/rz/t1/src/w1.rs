@@ -11,9 +11,9 @@ This rust file is to calculate the v r s from the private key provided
 use crate::ut::print_with_synthwave_gradient;
 use yansi::Paint;
 
-use alloy_primitives::{B256, hex::FromHex, keccak256};
+use alloy_primitives::{hex::FromHex, Signature, B256};
 use alloy_signer::Signer;
-use alloy_signer_wallet::wallet::LocalWallet;
+use alloy_signer_local::LocalWallet;
 
 // -- Main Function cAll
 
@@ -25,23 +25,24 @@ pub fn w1_main() {
 
 // --- Sub Functions ---
 
-fn w1_vrs() {
+fn w1_vrs() -> Result<(), Box<dyn std::error::Error>> {
     // Initialize the signer with your private key
     let private_key = "your_private_key_here"; // Replace with your actual private key
-    let signer = LocalSigner::from_bytes(&hex::decode(private_key)?).expect("Invalid private key");
+    let private_key_bytes = B256::from_hex(private_key).expect("Invalid hex");
+    let signer = LocalWallet::from_bytes(&private_key_bytes).expect("Invalid private key");
 
     // The message to sign
     let message = b"hello";
 
     // Sign the message
-    let signature: Signature = signer.sign_message_sync(message)?;
+    let signature = signer.sign_message_sync(message)?;
 
     // Extract r and s values
-    let r = signature.r();
-    let s = signature.s();
+    let r = signature.r;
+    let s = signature.s;
 
     // Determine the recovery id (v value)
-    let v = signature.recovery_id().map(|id| id.to_byte()).unwrap_or(0);
+    let v = signature.v().to_byte();
 
     println!("r: {:?}", r);
     println!("s: {:?}", s);

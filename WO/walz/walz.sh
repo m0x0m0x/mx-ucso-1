@@ -22,7 +22,7 @@ hea1() {
 
 # Creating a keystore
 cast_create_keystore() {
-    echo -e "${GREEN}Creating keystore...${NC}"
+    echo -e "${GREEN}Creating keystores...${NC}"
 
     # Get he name for the keystore
     echo -e "Enter the name of keystore: "
@@ -32,12 +32,20 @@ cast_create_keystore() {
         exit 1
     fi
 
+    # Command Set
     CO1="mkdir -p $nama"
     CO2="cast wallet new $nama"
     CO3="cast wallet ls --dir $nama"
-    echo -e "${GREEN}Command: ${NC}${CO1}"
+
+    # Execution set
+    echo -e "${GREEN}-------------------------------${NC}"
+    echo -e "${GREEN}Creating Keystore Directory: ${NC}${CO1}"
     eval "$CO1"
+    echo -e "${GREEN}-------------------------------${NC}"
+    echo -e "${GREEN}Creating New Keystore: ${NC}${CO2}"
     eval "$CO2"
+    echo -e "${GREEN}-------------------------------${NC}"
+    echo -e "${GREEN}Listing Keystore: ${NC}${CO3}"
     eval "$CO3"
 
 }

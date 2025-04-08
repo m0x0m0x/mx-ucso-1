@@ -26,14 +26,17 @@ cast_create_keystore() {
 
     # Get he name for the keystore
     echo -e "Enter the name of keystore: "
-    read name_of_project
-    if [ -z "$name_of_project" ]; then
+    read nama
+    if [ -z "$nama" ]; then
         echo -e "${RED}BASTARD ! Project name cannot be empty${NC}"
         exit 1
     fi
 
-    CO1="cast "
+    CO1="cast wallet new --keystore $nama"
+    echo -e "${GREEN}Command: ${NC}${CO1}"
+    eval "$CO1"
 
 }
 
 # Execution
+cast_create_keystore

@@ -34,9 +34,11 @@ cast_create_keystore() {
 
     CO1="mkdir -p $nama"
     CO2="cast wallet new $nama"
+    CO3="cast wallet ls --dir $nama"
     echo -e "${GREEN}Command: ${NC}${CO1}"
     eval "$CO1"
     eval "$CO2"
+    eval "$CO3"
 
 }
 

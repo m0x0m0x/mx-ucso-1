@@ -22,8 +22,17 @@ hea1() {
 
 # Creating a keystore
 cast_create_keystore() {
-
     echo -e "${GREEN}Creating keystore...${NC}"
+
+    # Get he name for the keystore
+    echo -e "Enter the name of keystore: "
+    read name_of_project
+    if [ -z "$name_of_project" ]; then
+        echo -e "${RED}BASTARD ! Project name cannot be empty${NC}"
+        exit 1
+    fi
+
+    CO1="cast "
 
 }
 

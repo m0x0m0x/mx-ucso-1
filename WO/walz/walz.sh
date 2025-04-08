@@ -32,9 +32,11 @@ cast_create_keystore() {
         exit 1
     fi
 
-    CO1="cast wallet new --keystore $nama"
+    CO1="mkdir -p $nama"
+    CO2="cast wallet new $nama"
     echo -e "${GREEN}Command: ${NC}${CO1}"
     eval "$CO1"
+    eval "$CO2"
 
 }
 

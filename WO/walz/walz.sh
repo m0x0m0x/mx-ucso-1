@@ -50,5 +50,23 @@ cast_create_keystore() {
 
 }
 
-# Execution
-cast_create_keystore
+cast_decrypt_keystore() {
+    # Get he name for the keystore
+    echo -e "Enter the name of keystore directory: "
+    read nama
+    if [ -z "$nama" ]; then
+        echo -e "${RED}BASTARD ! Project name cannot be empty${NC}"
+        exit 1
+    fi
+    echo -e "You entered: ${GREEN}$nama${NC}"
+
+    CO1="cast wallet ls --dir $nama"
+    echo -e "Enter the name of keystore directory: "
+    read nama2
+    if [ -z "$nama2" ]; then
+        echo -e "${RED}BASTARD ! Project name cannot be empty${NC}"
+        exit 1
+    fi
+    echo -e "You entered: ${GREEN}$nama2${NC}"
+
+}

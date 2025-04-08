@@ -61,7 +61,8 @@ cast_decrypt_keystore() {
     echo -e "You entered: ${GREEN}$nama${NC}"
 
     CO1="cast wallet ls --dir $nama"
-    echo -e "Enter the name of keystore directory: "
+    eval "$CO1"
+    echo -e "Enter the name of keystore name: "
     read nama2
     if [ -z "$nama2" ]; then
         echo -e "${RED}BASTARD ! Project name cannot be empty${NC}"
@@ -70,3 +71,6 @@ cast_decrypt_keystore() {
     echo -e "You entered: ${GREEN}$nama2${NC}"
 
 }
+
+# execution
+cast_decrypt_keystore

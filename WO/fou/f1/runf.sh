@@ -78,9 +78,15 @@ fo_test() {
 # UV Setup
 fo_create() {
 
-    CONTRACT_PATH="src/MyContract.sol:MyContract"
+    CONTRACT_PATH="src/Counter.sol:MyContract"
     RPC_URL="https://eth-sepolia.g.alchemy.com/v2/YOUR_ALCHEMY_KEY"
     PRIVATE_KEY="YOUR_PRIVATE_KEY"
     ETHERSCAN_API_KEY="YOUR_ETHERSCAN_API_KEY"
+
+    CO1="forge create ${CONTRACT_PATH} \
+  --rpc-url ${RPC_URL} \
+  --private-key ${PRIVATE_KEY} \
+  --etherscan-api-key ${ETHERSCAN_API_KEY} \
+  --verify"
 
 }

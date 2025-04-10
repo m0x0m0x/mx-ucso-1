@@ -81,17 +81,29 @@ fo_create() {
     hea1 "Foundry Create - One of contract deployment"
 
     CONTRACT_PATH="src/Counter.sol:Counter"
-    RPC_URL="https://eth-sepolia.g.alchemy.com/v2/YfG5-esHajH3FpsLvC4eMFMEFYl9Lqcg"
-    PRIVATE_KEY="0x3f03926cdb1f85a7b189060f53b0d055eb8c0cc9a838e929525eded8d7440dde"
+    local -a rpcz=(
+        "https://eth-sepolia.g.alchemy.com/v2/YfG5-esHajH3FpsLvC4eMFMEFYl9Lqcg"
+        "https://eth-holesky.g.alchemy.com/v2/YfG5-esHajH3FpsLvC4eMFMEFYl9Lqcg"
+    )
+    local -a keyz=(
+        "0x3f03926cdb1f85a7b189060f53b0d055eb8c0cc9a838e929525eded8d7440dde"
+        "0x6ce075e337c519ed35567152183557bbfec6d8c33d480464539a1fa2fd53dc04"
+        "0xf66f5d4d5e2c7477f1139c94308732eb962309c2808838be8d7331f1a0b6806c"
+    )
+    # RPC_URL="https://eth-sepolia.g.alchemy.com/v2/YfG5-esHajH3FpsLvC4eMFMEFYl9Lqcg"
+    # PRIVATE_KEY="0x3f03926cdb1f85a7b189060f53b0d055eb8c0cc9a838e929525eded8d7440dde"
     ETHERSCAN_API_KEY="2JEANQYC4C9S6PKDFWNGVT2UER24T32D2M"
 
     CO1="forge create ${CONTRACT_PATH} \
-  --rpc-url ${RPC_URL} \
-  --private-key ${PRIVATE_KEY} \
+  --rpc-url ${rpcz[1]} \
+  --private-key ${keyz[1]} \
   --etherscan-api-key ${ETHERSCAN_API_KEY} \
-  --verify"
+  --verify --broadcast"
 
     eval "$CO1"
     echo -e "${GREEN}Successfully deployed contract${NC}"
 
 }
+
+# Execution
+fo_create

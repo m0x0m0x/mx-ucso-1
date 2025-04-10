@@ -67,7 +67,7 @@ fo_only() {
 ######### Foundry Executions ############
 
 # Testing
-fo_run() {
+fo_test() {
     hea1 "Foundry Run"
     CO1="forge test"
     eval "$CO1"
@@ -76,4 +76,11 @@ fo_run() {
 # Contract Deploy with verfication
 
 # UV Setup
-fo_run
+fo_create() {
+
+    CONTRACT_PATH="src/MyContract.sol:MyContract"
+    RPC_URL="https://eth-sepolia.g.alchemy.com/v2/YOUR_ALCHEMY_KEY"
+    PRIVATE_KEY="YOUR_PRIVATE_KEY"
+    ETHERSCAN_API_KEY="YOUR_ETHERSCAN_API_KEY"
+
+}

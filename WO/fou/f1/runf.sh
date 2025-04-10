@@ -78,15 +78,20 @@ fo_test() {
 # UV Setup
 fo_create() {
 
-    CONTRACT_PATH="src/Counter.sol:MyContract"
-    RPC_URL="https://eth-sepolia.g.alchemy.com/v2/YOUR_ALCHEMY_KEY"
-    PRIVATE_KEY="YOUR_PRIVATE_KEY"
-    ETHERSCAN_API_KEY="YOUR_ETHERSCAN_API_KEY"
+    hea1 "Foundry Create - One of contract deployment"
+
+    CONTRACT_PATH="src/Counter.sol:Counter"
+    RPC_URL="https://eth-sepolia.g.alchemy.com/v2/YfG5-esHajH3FpsLvC4eMFMEFYl9Lqcg"
+    PRIVATE_KEY="0x3f03926cdb1f85a7b189060f53b0d055eb8c0cc9a838e929525eded8d7440dde"
+    ETHERSCAN_API_KEY="2JEANQYC4C9S6PKDFWNGVT2UER24T32D2M"
 
     CO1="forge create ${CONTRACT_PATH} \
   --rpc-url ${RPC_URL} \
   --private-key ${PRIVATE_KEY} \
   --etherscan-api-key ${ETHERSCAN_API_KEY} \
   --verify"
+
+    eval "$CO1"
+    echo -e "${GREEN}Successfully deployed contract${NC}"
 
 }

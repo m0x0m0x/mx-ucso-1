@@ -74,8 +74,6 @@ fo_test() {
 }
 
 # Contract Deploy with verfication
-
-# UV Setup
 fo_create() {
 
     hea1 "Foundry Create - One of contract deployment"

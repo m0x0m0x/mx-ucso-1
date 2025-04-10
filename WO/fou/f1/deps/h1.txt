@@ -1,0 +1,31 @@
+[H[2J[3J[0;36m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[0;35mFoundry Create - One of contract deployment[0m
+[0;36m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+No files changed, compilation skipped
+Deployer: 0x5508D7e21f7B096481AfCc9bA2e2a405Be96b878
+Deployed to: 0x61AB3fcDA45dBD20ead48659EEeEcDEcfc4C005e
+Transaction hash: 0xd5e101f8af5e4355ef3b2d3e6e5ba34030e409e986be8dec87e26a65cdd627ac
+Starting contract verification...
+Waiting for sourcify to detect contract deployment...
+Start verifying contract `0x61AB3fcDA45dBD20ead48659EEeEcDEcfc4C005e` deployed on holesky
+Compiler version: 0.8.28
+
+Submitting verification for [src/Counter.sol:Counter] 0x61AB3fcDA45dBD20ead48659EEeEcDEcfc4C005e.
+
+Submitting verification for [src/Counter.sol:Counter] 0x61AB3fcDA45dBD20ead48659EEeEcDEcfc4C005e.
+
+Submitting verification for [src/Counter.sol:Counter] 0x61AB3fcDA45dBD20ead48659EEeEcDEcfc4C005e.
+
+Submitting verification for [src/Counter.sol:Counter] 0x61AB3fcDA45dBD20ead48659EEeEcDEcfc4C005e.
+Submitted contract for verification:
+	Response: `OK`
+	GUID: `1ijpeebtuh3mtm8i8iqurjxkbwanhrithcdrx9mv2brp1ek1em`
+	URL: https://holesky.etherscan.io/address/0x61ab3fcda45dbd20ead48659eeeecdecfc4c005e
+Contract verification status:
+Response: `NOTOK`
+Details: `Pending in queue`
+Contract verification status:
+Response: `NOTOK`
+Details: `Already Verified`
+Contract source code already verified
+[0;32mSuccessfully deployed contract[0m

@@ -66,11 +66,14 @@ fo_only() {
 
 ######### Foundry Executions ############
 
+# Testing
 fo_run() {
     hea1 "Foundry Run"
     CO1="forge test"
     eval "$CO1"
 }
+
+# Contract Deploy with verfication
 
 # UV Setup
 fo_run

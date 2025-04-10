@@ -192,5 +192,5 @@ ca_send() {
 }
 
 # Execution
-ca_send
+# ca_send
 ca_wa_ba2

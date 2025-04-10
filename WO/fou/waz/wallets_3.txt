@@ -1,0 +1,18 @@
+Generating mnemonic from provided entropy...
+Successfully generated a new mnemonic.
+Phrase:
+kidney radio bracket camera acquire bitter chat february tape cup track betray
+
+Accounts:
+- Account 0:
+Address:     0x2ce40e5d9BC00dA5f397690E83E88183c4d4b23F
+Private key: 0x3f03926cdb1f85a7b189060f53b0d055eb8c0cc9a838e929525eded8d7440dde
+
+- Account 1:
+Address:     0x5508D7e21f7B096481AfCc9bA2e2a405Be96b878
+Private key: 0x6ce075e337c519ed35567152183557bbfec6d8c33d480464539a1fa2fd53dc04
+
+- Account 2:
+Address:     0x2C1381655097598Bae22c5326b0F3B43220a18c4
+Private key: 0xf66f5d4d5e2c7477f1139c94308732eb962309c2808838be8d7331f1a0b6806c
+

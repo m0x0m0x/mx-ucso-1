@@ -12,7 +12,11 @@ contract CounterScript is Script {
     function run() public {
         vm.startBroadcast();
 
-        counter = new Counter();
+        // Replace this with your actual deployed address
+        counter = Counter(0x5718B2c6B98b91CA4617b7534D2C23B780B13BcB);
+
+        // Call a function on it (example)
+         counter.setNumber(69);
 
         vm.stopBroadcast();
     }

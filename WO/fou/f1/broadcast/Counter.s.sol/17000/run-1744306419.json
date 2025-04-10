@@ -1,0 +1,49 @@
+{
+  "transactions": [
+    {
+      "hash": "0x5d17356cfeef82d4da9775fb06baf8dbc8715fa0fff6f6ebf64c26c0f761f6bf",
+      "transactionType": "CALL",
+      "contractName": null,
+      "contractAddress": "0x5718b2c6b98b91ca4617b7534d2c23b780b13bcb",
+      "function": "setNumber(uint256)",
+      "arguments": [
+        "69"
+      ],
+      "transaction": {
+        "from": "0x5508d7e21f7b096481afcc9ba2e2a405be96b878",
+        "to": "0x5718b2c6b98b91ca4617b7534d2c23b780b13bcb",
+        "gas": "0xebc3",
+        "value": "0x0",
+        "input": "0x3fb5c1cb0000000000000000000000000000000000000000000000000000000000000045",
+        "nonce": "0x5",
+        "chainId": "0x4268"
+      },
+      "additionalContracts": [],
+      "isFixedGasLimit": false
+    }
+  ],
+  "receipts": [
+    {
+      "status": "0x1",
+      "cumulativeGasUsed": "0x1a2076",
+      "logs": [],
+      "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "type": "0x2",
+      "transactionHash": "0x5d17356cfeef82d4da9775fb06baf8dbc8715fa0fff6f6ebf64c26c0f761f6bf",
+      "transactionIndex": "0x4",
+      "blockHash": "0x0dd94dfae8e8300a5a9a626696f367ac9eabf28e8be348b2e6996a539e0c8625",
+      "blockNumber": "0x37b35d",
+      "gasUsed": "0xaab0",
+      "effectiveGasPrice": "0x159f18",
+      "from": "0x5508d7e21f7b096481afcc9ba2e2a405be96b878",
+      "to": "0x5718b2c6b98b91ca4617b7534d2c23b780b13bcb",
+      "contractAddress": null
+    }
+  ],
+  "libraries": [],
+  "pending": [],
+  "returns": {},
+  "timestamp": 1744306419,
+  "chain": 17000,
+  "commit": "25b4fcc"
+}

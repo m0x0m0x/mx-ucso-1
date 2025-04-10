@@ -79,8 +79,9 @@ keyz=(
 accz=(
     "0x2ce40e5d9BC00dA5f397690E83E88183c4d4b23F"
     "0x5508D7e21f7B096481AfCc9bA2e2a405Be96b878"
-    "0xf66f5d4d5e2c7477f1139c94308732eb962309c2808838be8d7331f1a0b6806c"
+    "0x2C1381655097598Bae22c5326b0F3B43220a18c4"
 )
+ETHERSCAN_API_KEY="2JEANQYC4C9S6PKDFWNGVT2UER24T32D2M"
 
 # Testing
 fo_test() {
@@ -98,7 +99,7 @@ fo_create() {
 
     # RPC_URL="https://eth-sepolia.g.alchemy.com/v2/YfG5-esHajH3FpsLvC4eMFMEFYl9Lqcg"
     # PRIVATE_KEY="0x3f03926cdb1f85a7b189060f53b0d055eb8c0cc9a838e929525eded8d7440dde"
-    ETHERSCAN_API_KEY="2JEANQYC4C9S6PKDFWNGVT2UER24T32D2M"
+    # ETHERSCAN_API_KEY="2JEANQYC4C9S6PKDFWNGVT2UER24T32D2M"
 
     CO1="forge create ${CONTRACT_PATH} \
   --rpc-url ${rpcz[1]} \
@@ -111,5 +112,17 @@ fo_create() {
 
 }
 
+fo_script() {
+    hea1 "Foundry Script - One of contract deployment"
+
+    CO1="forge script script/Counter.s.sol:CounterScript \
+        --rpc-url ${rpcz[1]} \
+        --private-key ${keyz[1]} \
+        --broadcast"
+
+    eval "$CO1"
+    echo -e "${GREEN}Successfully deployed contract${NC}"
+}
+
 # Execution
-fo_create
+fo_script

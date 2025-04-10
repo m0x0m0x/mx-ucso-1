@@ -64,5 +64,13 @@ fo_only() {
     echo -e "${GREEN}Foundry Only Install ${CO4}${NC}"
 }
 
+######### Foundry Executions ############
+
+fo_run() {
+    hea1 "Foundry Run"
+    CO1="forge test"
+    eval "$CO1"
+}
+
 # UV Setup
-fo_only
+fo_run

@@ -125,4 +125,5 @@ fo_script() {
 }
 
 # Execution
-fo_script
+# foset # Setup a new foundry project
+# fo_only # Setup a new foundry project without slither

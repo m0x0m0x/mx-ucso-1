@@ -3,5 +3,9 @@
   "solidity.packageDefaultDependenciesDirectory": "lib",
   "wake.compiler.solc.remappings": [
     "forge-std/=lib/forge-std/src/"
-  ]
+  ],
+  "editor.defaultFormatter": "AckeeBlockchain.tools-for-solidity",
+  "[solidity]": {
+    "editor.defaultFormatter": "AckeeBlockchain.tools-for-solidity"
+  }
 }

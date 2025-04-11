@@ -1,3 +1,16 @@
+1. [Foundry](#foundry)
+2. [Documentation](#documentation)
+3. [Usage](#usage)
+   1. [Build](#build)
+   2. [Test](#test)
+   3. [Format](#format)
+   4. [Gas Snapshots](#gas-snapshots)
+   5. [Anvil](#anvil)
+   6. [Deploy](#deploy)
+   7. [Cast](#cast)
+   8. [Help](#help)
+
+
 ## Foundry
 
 **Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
@@ -64,3 +77,8 @@ $ forge --help
 $ anvil --help
 $ cast --help
 ```
+
+# Project Information
+
+1. This will be the work for ucy f1 
+2. 

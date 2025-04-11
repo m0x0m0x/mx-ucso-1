@@ -129,5 +129,5 @@ fo_script() {
 # foset # Setup a foundry project, setup uv venv and install slither
 # fo_only # Setup a foundry project only
 # fo_test # Foundry Test Run
-fo_create # Foundry Create - One of contract deployment with verification
+# fo_create # Foundry Create - One of contract deployment with verification
 # fo_script # Foundry Script - Script based deploy

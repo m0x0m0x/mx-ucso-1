@@ -79,7 +79,5 @@ EOF
     echo -e ""
 }
 
-# Send 
-
 # Execution
 encodedata__to_hex_input

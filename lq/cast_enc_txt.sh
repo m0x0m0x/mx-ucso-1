@@ -79,7 +79,8 @@ EOF
     echo -e ""
 }
 
-# Send 
+# Send data with the transaction 
+
 
 # Execution
 encodedata__to_hex_input

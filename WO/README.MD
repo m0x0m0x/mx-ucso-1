@@ -13,3 +13,4 @@ Dir | What
 [`walz`](./walz/) | Waets generated with castPanty
 [`sc`](./sc/) | Smart Contract AssandPussy smelling and licking here. 
 [`fou`](./fou/) | Foundry Stuff IN here 
+[`hhs`](./hhs/) | Hardhat Study

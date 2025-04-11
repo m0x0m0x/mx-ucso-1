@@ -125,5 +125,8 @@ fo_script() {
 }
 
 # Execution
-# foset # Setup a new foundry project
-# fo_only # Setup a new foundry project without slither
+# foset # Setup a new foundry project with slither
+# fo_only # Setup only foundry project
+# fo_test # Run the tests
+# fo_create # Deploy the contract with verification
+# fo_script # Run the script

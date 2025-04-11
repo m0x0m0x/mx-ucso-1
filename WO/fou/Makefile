@@ -17,66 +17,65 @@ ETHERSCAN_API_KEY=2JEANQYC4C9S6PKDFWNGVT2UER24T32D2M
 .DEFAULT_GOAL := help
 
 help:
-	@echo -e "\nAvailable commands:"
-	@echo -e "  make foset       - Setup Foundry project + uv venv + slither"
-	@echo -e "  make fo_only     - Setup only Foundry project"
-	@echo -e "  make fo_test     - Run tests"
-	@echo -e "  make fo_create   - Deploy contract with verification"
-	@echo -e "  make fo_script   - Deploy contract using script"
-	@echo -e "  make help        - Show this help menu"
+	@printf "\nAvailable commands:\n"
+	@printf "  make foset       - Setup Foundry project + uv venv + slither (fish shell)\n"
+	@printf "  make fo_only     - Setup only Foundry project\n"
+	@printf "  make fo_test     - Run tests\n"
+	@printf "  make fo_create   - Deploy contract with verification\n"
+	@printf "  make fo_script   - Deploy contract using script\n"
+	@printf "  make help        - Show this help menu\n"
 
 # Project creation
 foset:
-	@echo -e "$(CYAN)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$(NC)"
-	@echo -e "$(PURPLE)Setting up full Foundry + Slither project$(NC)"
-	@echo -e "$(CYAN)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$(NC)"
+	@printf "$$CYAN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$$NC\n"
+	@printf "$$PURPLESetting up full Foundry + Slither project$$NC\n"
+	@printf "$$CYAN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$$NC\n"
 	@read -p "Enter the name of the project: " name; \
 	if [ -z "$$name" ]; then \
-		echo -e "$(RED)BASTARD ! Project name cannot be empty$(NC)"; \
+		printf "$$RED BASTARD ! Project name cannot be empty $$NC\n"; \
 		exit 1; \
 	fi; \
 	forge init --no-commit --no-git --force --vscode $$name && \
 	cd $$name && \
-	uv venv && source venv/bin/activate.fish && \
-	uv pip install slither-analyzer && \
+	uv venv && fish -c 'source venv/bin/activate.fish; uv pip install slither-analyzer' && \
 	solc-select install 0.8.13 && solc-select use 0.8.13;
 
 fo_only:
-	@echo -e "$(CYAN)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$(NC)"
-	@echo -e "$(PURPLE)Setting up only Foundry project$(NC)"
-	@echo -e "$(CYAN)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$(NC)"
+	@printf "$$CYAN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$$NC\n"
+	@printf "$$PURPLESetting up only Foundry project$$NC\n"
+	@printf "$$CYAN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$$NC\n"
 	@read -p "Enter the name of the project: " name; \
 	if [ -z "$$name" ]; then \
-		echo -e "$(RED)BASTARD ! Project name cannot be empty$(NC)"; \
+		printf "$$RED BASTARD ! Project name cannot be empty $$NC\n"; \
 		exit 1; \
 	fi; \
 	forge init --no-commit --no-git --force --vscode $$name
 
 fo_test:
-	@echo -e "$(CYAN)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$(NC)"
-	@echo -e "$(PURPLE)Running Foundry Tests$(NC)"
-	@echo -e "$(CYAN)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$(NC)"
+	@printf "$$CYAN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$$NC\n"
+	@printf "$$PURPLERunning Foundry Tests$$NC\n"
+	@printf "$$CYAN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$$NC\n"
 	forge test
 
 fo_create:
-	@echo -e "$(CYAN)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$(NC)"
-	@echo -e "$(PURPLE)Deploying Contract with Verification$(NC)"
-	@echo -e "$(CYAN)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$(NC)"
+	@printf "$$CYAN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$$NC\n"
+	@printf "$$PURPLEDeploying Contract with Verification$$NC\n"
+	@printf "$$CYAN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$$NC\n"
 	forge create src/Counter.sol:Counter \
-	--rpc-url $(RPC_1) \
-	--private-key $(KEY_1) \
-	--etherscan-api-key $(ETHERSCAN_API_KEY) \
+	--rpc-url $$(RPC_1) \
+	--private-key $$(KEY_1) \
+	--etherscan-api-key $$(ETHERSCAN_API_KEY) \
 	--verify --broadcast
-	@echo -e "$(GREEN)Successfully deployed contract$(NC)"
+	@printf "$$GREENSuccessfully deployed contract$$NC\n"
 
 fo_script:
-	@echo -e "$(CYAN)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$(NC)"
-	@echo -e "$(PURPLE)Running Foundry Script$(NC)"
-	@echo -e "$(CYAN)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$(NC)"
+	@printf "$$CYAN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$$NC\n"
+	@printf "$$PURPLERunning Foundry Script$$NC\n"
+	@printf "$$CYAN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$$NC\n"
 	forge script script/Counter.s.sol:CounterScript \
-	--rpc-url $(RPC_1) \
-	--private-key $(KEY_1) \
+	--rpc-url $$(RPC_1) \
+	--private-key $$(KEY_1) \
 	--broadcast
-	@echo -e "$(GREEN)Successfully deployed contract$(NC)"
+	@printf "$$GREENSuccessfully deployed contract$$NC\n"
 
 .PHONY: foset fo_only fo_test fo_create fo_script help

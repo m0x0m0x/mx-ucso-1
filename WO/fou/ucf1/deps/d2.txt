@@ -1,0 +1,32 @@
+[H[2J[3J[0;36m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[0;35mFoundry Script - One of contract deployment[0m
+[0;36m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+Compiling 17 files with Solc 0.8.28
+Solc 0.8.28 finished in 847.25ms
+Compiler run successful!
+Script ran successfully.
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 17000
+
+Estimated gas price: 0.00141699 gwei
+
+Estimated total gas used for script: 203841
+
+Estimated amount required: 0.00000028884065859 ETH
+
+==========================
+
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+
+Transactions saved to: /workspaces/mx-ucso-1/WO/fou/ucf1/broadcast/Counter.s.sol/17000/run-latest.json
+
+Sensitive values saved to: /workspaces/mx-ucso-1/WO/fou/ucf1/cache/Counter.s.sol/17000/run-latest.json
+
+[0;32mSuccessfully deployed contract[0m

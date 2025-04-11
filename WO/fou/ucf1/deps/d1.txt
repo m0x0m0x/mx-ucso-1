@@ -27,3 +27,27 @@ Response: `NOTOK`
 Details: `Already Verified`
 Contract source code already verified
 [0;32mSuccessfully deployed contract[0m
+[H[2J[3J[0;36m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[0;35mFoundry Create - One of contract deployment[0m
+[0;36m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+No files changed, compilation skipped
+Deployer: 0x5508D7e21f7B096481AfCc9bA2e2a405Be96b878
+Deployed to: 0xa29fCFdD0e54CB29DDb4c5B4c4F79bdC4CB9913E
+Transaction hash: 0xd6263c04c8a1dbce85b1b0fd7249993546c7a1e7143305df9b14f52e4a9e45dc
+Starting contract verification...
+Waiting for sourcify to detect contract deployment...
+Start verifying contract `0xa29fCFdD0e54CB29DDb4c5B4c4F79bdC4CB9913E` deployed on holesky
+Compiler version: 0.8.28
+
+Submitting verification for [src/Counter.sol:Counter] 0xa29fCFdD0e54CB29DDb4c5B4c4F79bdC4CB9913E.
+
+Submitting verification for [src/Counter.sol:Counter] 0xa29fCFdD0e54CB29DDb4c5B4c4F79bdC4CB9913E.
+
+Submitting verification for [src/Counter.sol:Counter] 0xa29fCFdD0e54CB29DDb4c5B4c4F79bdC4CB9913E.
+
+Submitting verification for [src/Counter.sol:Counter] 0xa29fCFdD0e54CB29DDb4c5B4c4F79bdC4CB9913E.
+
+Submitting verification for [src/Counter.sol:Counter] 0xa29fCFdD0e54CB29DDb4c5B4c4F79bdC4CB9913E.
+
+Submitting verification for [src/Counter.sol:Counter] 0xa29fCFdD0e54CB29DDb4c5B4c4F79bdC4CB9913E.
+[0;32mSuccessfully deployed contract[0m

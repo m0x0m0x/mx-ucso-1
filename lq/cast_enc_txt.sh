@@ -79,8 +79,57 @@ EOF
     echo -e ""
 }
 
-# Send data with the transaction 
+# Send data with the transaction
+ca_send_hex() {
+    hea1 "Use cast to send hex data"
 
+    read -r -d '' dataz <<'EOF'
+
+ ███████╗ ███╗   ███╗ ███████╗ ██╗      ██╗      ██████╗   █████╗  ███╗   ██╗ ████████╗ ██╗   ██╗
+ ██╔════╝ ████╗ ████║ ██╔════╝ ██║      ██║      ██╔══██╗ ██╔══██╗ ████╗  ██║ ╚══██╔══╝ ╚██╗ ██╔╝
+ ███████╗ ██╔████╔██║ █████╗   ██║      ██║      ██████╔╝ ███████║ ██╔██╗ ██║    ██║     ╚████╔╝ 
+ ╚════██║ ██║╚██╔╝██║ ██╔══╝   ██║      ██║      ██╔═══╝  ██╔══██║ ██║╚██╗██║    ██║      ╚██╔╝  
+ ███████║ ██║ ╚═╝ ██║ ███████╗ ███████╗ ███████╗ ██║      ██║  ██║ ██║ ╚████║    ██║       ██║   
+ ╚══════╝ ╚═╝     ╚═╝ ╚══════╝ ╚══════╝ ╚══════╝ ╚═╝      ╚═╝  ╚═╝ ╚═╝  ╚═══╝    ╚═╝       ╚═╝   
+
+EOF
+
+    make_data="cast fa \"$dataz\""
+    hex_out=$(eval "$make_data")
+
+    local -a wallets=(
+        "0x2ce40e5d9BC00dA5f397690E83E88183c4d4b23F"
+        "0x5508D7e21f7B096481AfCc9bA2e2a405Be96b878"
+        "0x2C1381655097598Bae22c5326b0F3B43220a18c4"
+    )
+
+    local -a keyz=(
+        "0x3f03926cdb1f85a7b189060f53b0d055eb8c0cc9a838e929525eded8d7440dde"
+        "0x6ce075e337c519ed35567152183557bbfec6d8c33d480464539a1fa2fd53dc04"
+        "0xf66f5d4d5e2c7477f1139c94308732eb962309c2808838be8d7331f1a0b6806c"
+    )
+
+    # Network Configurations (Format: "NetworkName:RPC_URL")
+    local -a networks=(
+        "https://eth-sepolia.g.alchemy.com/v2/YfG5-esHajH3FpsLvC4eMFMEFYl9Lqcg"
+        "https://eth-holesky.g.alchemy.com/v2/YfG5-esHajH3FpsLvC4eMFMEFYl9Lqcg"
+    )
+
+    CO1="cast send \
+  --chain SEPOLIA \
+  --rpc-url ${networks[1]} \
+  --private-key ${keyz[0]} \
+  ${wallets[1]} ${hex_out} "
+
+    eval "$CO1" 2>&1
+    if [ $? -ne 0 ]; then
+        echo -e "${RED}Error: ${send_output}${NC}"
+        return 1 # Indicate failure
+    fi
+    echo -e "${GREEN}Transaction successful: ${send_output}${NC}"
+    echo -e "${GREEN}Transaction hash: ${send_output}${NC}"
+
+}
 
 # Execution
-encodedata__to_hex_input
+ca_send_hex
